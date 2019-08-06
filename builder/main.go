@@ -47,14 +47,14 @@ func (f Decorator) WithB(b int) Decorator {
 	}
 }
 
+// Build .
+func (f Decorator) Build() *MyStruct {
+	return f(&MyStruct{})
+}
+
 // NewMyStruct .
 func NewMyStruct() Decorator {
 	return func(m *MyStruct) *MyStruct {
 		return m
 	}
-}
-
-// Build .
-func (f Decorator) Build() *MyStruct {
-	return f(&MyStruct{})
 }
